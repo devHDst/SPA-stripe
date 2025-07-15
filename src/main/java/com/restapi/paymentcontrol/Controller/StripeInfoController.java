@@ -22,12 +22,15 @@ import com.stripe.model.PaymentMethod;
 import com.stripe.param.PaymentIntentCreateParams;
 import com.stripe.param.PaymentIntentUpdateParams;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @RestController
 @RequestMapping("/Stripe")
+@CrossOrigin(origins = "*", methods = {RequestMethod.POST})
 public class StripeInfoController {
     
     private static final Logger log = LoggerFactory.getLogger(PaymentService.class);
